@@ -41,6 +41,7 @@ print("Usuwany element: " + global_temp.pop(index))
 print(global_temp)
 
 # Lista wielowymiarowa
+print("Lista wielowymiarowa")
 board = [
           ['_','_','_'] ,
           ['_','_','_'] ,
@@ -60,7 +61,7 @@ print()
 print("V 2")
 for row in board:
     for value in row:
-        print(value,end=' ')
+        print(value, end=' ')
     print()
 
 ######################
