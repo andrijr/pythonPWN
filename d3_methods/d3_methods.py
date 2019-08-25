@@ -1,4 +1,4 @@
-from random import choices
+from random import choices, randrange, randint
 from time import localtime, time
 from timeit import timeit
 from cmath import sqrt
@@ -177,12 +177,135 @@ print(distanceMeasure(1,1,2,2))
 
 
 
+# P61
+# Zdefiniuj funkcję, która dla podanych trzech parametrów:
+
+a = 2
+q = 3
+n = 5
+def geometric(a, q = 3, n = 5):
+    an = a * q **(n-1)
+    sum = 0
+    for i in range(1, n+1):
+        sum += a * q ** (i-1)
+    return (an, sum)
+
+print(geometric(a,q, n))
+
+
+def geometric(a, q = 3, n = 5):
+    an = a * q **(n-1)
+    sum = 0
+    for i in range(0, n):
+        sum += a * q ** (i)
+    return (an, sum)
+
+print(geometric(a,q, n))
+
+
+# P 63
+# Napisz funkcję generującą kod HTML dla napisu:
+# <span style="color: color_name; font-size: value; “>content</span>
+
+def generateHtmlSpanCode(content, color = "black", fontSize = 13, repetition =1):
+        html =  '<span style="color: %s color_name; %s: value; “>%s</span>\n' % (color, fontSize, content)
+        html = html * repetition
+        return html
+print(generateHtmlSpanCode("Test","red", 16, 5))
 
 
 
 
+posts = ["Post1","Post2","Post3","Post4"]
+
+def generateHtmlSpanCode(posts, color = "black", fontSize = 12):
+    html_content = ""
+    for post in posts:
+        html_content += '<h1 style="color: %s; font-size: %s;">%s</h1>\n' % (color, fontSize, post)
+    return html_content
+
+print(generateHtmlSpanCode(posts, "red", 16))
+
+def generateHtmlSpanCodeWithBackground(posts, color = "black", fontSize = 12):
+    html_content = ""
+    backgroundColor = "black"
+    for post in posts:
+        html_content += '<h1 style="color: %s; font-size: %s; backgroundColor: %s">%s</h1>\n' % (color, fontSize,  backgroundColor, post)
+        if (backgroundColor == "black"):
+            backgroundColor = "white"
+        else:
+            backgroundColor = "black"
+    return html_content
+
+print(generateHtmlSpanCode(posts, "red"))
+
+color = "black"
+def generateDifferenceColors():
+    global color
+    if(color == "black"):
+        color = "white"
+    else:
+        color = "black"
+    return color
+
+print(generateDifferenceColors())
+print(generateDifferenceColors())
+print(generateDifferenceColors())
+print(generateDifferenceColors())
+print(generateDifferenceColors())
+print()
+
+color = "black"
+def generateDifferenceColors(color1 = "back", color2 = "white",):
+    global color
+    if(color == color1):
+        color = color2
+    else:
+        color = color1
+    return color
+
+print(generateDifferenceColors())
+print(generateDifferenceColors())
+print(generateDifferenceColors())
+print(generateDifferenceColors())
+print(generateDifferenceColors())
+
+# P65
 
 
+def tableSum(ilosc, minSup = 0):
+    tablica = []
+    for i in range(0, ilosc):
+        tablica.append(randint(-ilosc, ilosc))
+    return tablica
 
+print(tableSum(10))
+print()
 
+def generateSignal(n):
+    signal = []
+    for i in range(0, n):
+        signal.append(randint(-1000, 1000))
+    return signal
+print(generateSignal(10))
 
+def sumRandomValuesWithSuport(minSupp, maxSupp, n):
+    signal = generateSignal(n)
+    processedSignal = []
+    sum = 0
+    sumProcessed = 0
+    for i,v in enumerate(signal):
+        sum += v
+        if(v < minSupp or v > maxSupp):
+            processedSignal.append(0)
+        else:
+            processedSignal.append(v)
+            sumProcessed += v
+    return signal, sum, sum/len(signal), processedSignal,sumProcessed, sumProcessed/len(processedSignal)
+
+x = sumRandomValuesWithSuport(-900,900,10)
+print(x[0],x[1],x[2])
+print(x[3],x[4],x[5])
+print(x[2],x[5])
+
+print(sumRandomValuesWithSuport(-900,900,10))
