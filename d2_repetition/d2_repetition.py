@@ -94,6 +94,7 @@ print(global_temp_current1)
 print(global_temp_current1["C1"])
 print(global_temp_current1["C1"][2], global_temp_current1["C1"][1])
 
+print("############")
 for key in global_temp_current1.keys():
     print(key, end=" ")
     for value in global_temp_current1[key]:
@@ -111,8 +112,7 @@ print(list(liczba) == list(reversed(liczba)))
 #  liczba_rev.reverse()
 #  print(list(liczba) == liczba_rev)
 
-liczba = '1221' #input("Podaj liczbę: " )
-print(list(reversed(liczba)) == list(liczba))
+
 
 ### DLa DANYCH LICZB ALGORYTM ZWRACA TYLKO WARTOŚCI UNIKATOWE ###
 print("zbiory = set() ")
