@@ -113,6 +113,9 @@ print(list(liczba) == list(reversed(liczba)))
 #  print(list(liczba) == liczba_rev)
 
 
+######################
+# Zbiory
+######################
 
 ### DLa DANYCH LICZB ALGORYTM ZWRACA TYLKO WARTOŚCI UNIKATOWE ###
 print("zbiory = set() ")
@@ -143,8 +146,10 @@ print(set(l1).symmetric_difference(set(l2)))
 ###
 
 
-
-
+# P39
+a_tekst = 'jeden' #str(input("Podaj liczbę zapisaną słownie: "))
+for i in a_tekst:
+    print()
 
 
 

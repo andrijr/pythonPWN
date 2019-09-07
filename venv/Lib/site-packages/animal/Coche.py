@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+
+import numpy as np
+
+class Coche:
+    
+    def __init__(self,ruedas,cristales):
+        self.ruedas=ruedas
+        self.cristales=cristales
+        
+    def arreglar(self):
+        return "El coche tiene "+str(self.ruedas)+" ruedas y "+str(self.cristales)+" cristales"
+    
+    

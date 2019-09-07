@@ -6,6 +6,7 @@ from cmath import sqrt
 # funkcje to tez metody w python
 # metody są malymi literami a klasy są dużymi
 
+
 returnValue = localtime()
 print(returnValue)
 
@@ -60,7 +61,7 @@ printDataset(normalizeDataset(data, -1, 1))
 printDataset(normalizeDataset(data, lowBorder = -1, topBorder = 1))
 findExtrema(data)
 
-# dowolna liczba argumentó
+# dowolna liczba argumentów
 def gradesAvg(*grades):
     sum = 0
     for grade in grades:
@@ -70,6 +71,8 @@ def gradesAvg(*grades):
 print("Uczeń 1: " + str( gradesAvg(2,3,1,4,5,6)),
       "Uczeń 1: " + str(gradesAvg(2,3)),
       "Uczeń 1: " + str(gradesAvg(2,3,1,5)) )
+
+
 
 
 # P 57
@@ -108,20 +111,20 @@ print(t_start - t_stop)
 
 # P 58
 # Napisz program obliczający wartość zadanego elementu ciągu Fibonacciego i obliczający sumę elementów ciągu.
-
+# 1,1,2,3,5,8,....
 
 def fibonacciSeries(n):
     fib = []
-    sum = 1
-    for index, value in enumerate(range(0, n+1)):
-
+    sum = 0
+    for index, value in enumerate(range(0,n+1)):
         if(index == 0):
             fib.append(0)
         elif(index == 1):
             fib.append(1)
         else:
-            fib.append(fib[index -1] + fib[index -1])
+            fib.append(fib[index - 1] + fib[index - 2])
         sum += fib[index]
+
     return fib, fib[n], sum
 
 print(fibonacciSeries(15))

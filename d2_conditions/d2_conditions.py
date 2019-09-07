@@ -57,30 +57,6 @@ print("" if isLogged else "BŁĄD LOGOWANIA")
 
 
 
-###############
-# login, hasło, uprawnienia, aktywacja
-print("###########")
-
-users = [ ["mk","mk123","ROLE_ADMIN",True],
-          ["kk", "kk123", "ROLE_USER", True],
-          ["ll", "ll123", "ROLE_USER", True]]
-
-## LOGOWANIE NA PODSTAWIE LISTY UŻTRKOWNIKÓW
-isLogged = False
-for user in users:
-    if(login == user[0] and password == user[1]):
-        isLogged = True
-        if(user[2] == "ROLE_ADMIN"):
-            print("PANEL ADMINISTRATORA")
-            break
-        else:
-            print("PANEL UŻYTKOWNIKA")
-            break
-print("" if isLogged else "BŁĄD LOGOWANIA")
-
-
-
-
 ##################
 print("Zliczanie petla While ")
 

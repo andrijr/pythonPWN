@@ -1,0 +1,73 @@
+"""
+
+ Read data from 1wire temp sensor dallas 18s20
+
+ by Vaclav Rak  <me@vena,cz>
+
+"""
+
+import os
+import glob
+import time
+from logging import getLogger
+
+
+logger = getLogger("thermometer.d18s20.w1")
+
+
+class dallas_18s20(object):
+    device_file = None
+    base_dir = ""
+    device_folder = ""
+    aliases = {}
+
+    def __init__(self, base_dir="/sys/bus/w1/devices/", modprobe=True):
+        if modprobe:
+            os.system('/sbin/modprobe w1-gpio')
+            os.system('/sbin/modprobe w1-therm')
+        self.device_file = None
+        self.base_dir = base_dir
+        self.aliases = {}
+
+    def alias(self, id, name):
+        self.aliases[id] = name
+
+    def read_temp_raw(self):
+        f = open(self.device_file, 'r')
+        lines = f.readlines()
+        f.close()
+        return lines
+
+    def read_temp(self, temp_id):
+        lines = self.read_temp_raw()
+
+        while lines[0].strip()[-3:] != 'YES':
+            time.sleep(0.2)
+            lines = self.read_temp_raw()
+        equals_pos = lines[1].find('t=')
+        if equals_pos != -1:
+            temp_string = lines[1][equals_pos + 2:]
+            temp_c = float(temp_string) / 1000.0
+            return (temp_id, temp_c)
+
+    def get_temps(self):
+        result = []
+        for prefix in ["28", "10"]:
+            for self.device_folder in glob.glob("{devdir}{prefix}*".format(devdir = self.base_dir, prefix = prefix)):
+                temp_id = self.device_folder.replace("{devdir}{prefix}-".format(devdir=self.base_dir, prefix = prefix), '')
+                self.device_file = self.device_folder + '/w1_slave'
+                result.append(self.read_temp(temp_id))
+        logger.info(result)
+        return result
+
+    def get_temps_aliases(self):
+        response = []
+        for a in self.get_temps():
+            if a[0] in self.aliases:
+                response.append((self.aliases[a[0]], a[1]))
+            else:
+                response.append(a)
+
+        logger.info(response)
+        return response
+

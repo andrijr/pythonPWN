@@ -56,9 +56,9 @@ print(b)
 
 a = 1
 b = 2
-tmp = 1
-a = 2
-b = 1
+tmp = a
+a = b
+b = tmp
 print(a,b)
 
 # pattern matching
@@ -189,9 +189,11 @@ b = 80
 print( 2*a + 2*b)
 
 # P7b
+print("P7b")
 spala = 8
 km = 382
 print(km / 100 * spala)
+print(spala / 100 * km)
 
 # P7c
 a = 2
@@ -269,6 +271,8 @@ a = 0x100
 print (a) # system szesnastkowy
 
 # Zmienne logiczne
+# False  0  ""  ()  []  {}  None
+# True   pozostałe
 a = True
 b = False
 
@@ -292,8 +296,8 @@ if 1<3 and 1>2:
     print ("ok2")
 
 print ("log")
-print ('a' and 'b')
-print ('a' or 'b')
+print ('a' and 'b', "'a' and 'b‘# 'b'")
+print ('a' or 'b',"'a' or 'b' #'a'")
 
 a = '3'
 b = int(a)
@@ -301,6 +305,9 @@ d = float(a)
 print(type(a))
 print(type(b))
 print(type(d))
+
+
+
 
 # P16
 a = 7
@@ -318,6 +325,12 @@ print(a)
 print ("text\\ntext\\ntext")
 print (r"text\ntext\ntext")
 print ("text\ntext\ntext")
+
+print('none\n' *5)
+print('none\t' *5)
+print('none\\' *5)
+print('none\'' *5)
+print('none\"' *5)
 
 """ 
 h = float(input("podaj h "))
@@ -441,7 +454,8 @@ text = "hello world"
 print (text.capitalize())
 print (text.upper())
 a = text.upper()
-b = text.split(" ")
+b = text.split(" ") # tworzy listędzieląc napis na podstawie podanego separatora
+
 print (b)
 
 

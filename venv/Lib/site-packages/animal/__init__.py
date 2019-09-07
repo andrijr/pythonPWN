@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+
+from .Coche import Coche
+from .Taller import *

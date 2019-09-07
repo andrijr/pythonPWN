@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+
+from .Coche import Coche
+def mostrar(nombre):
+    a=Coche(4,5)
+    return "el coche" + nombre+ " "+a.arreglar()
