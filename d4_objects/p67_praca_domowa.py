@@ -46,7 +46,7 @@ class GradeSekretariat(Users):
             return grade
 
 
-
+Users()
 studentUser1 = Users("Andrzej", "Student1", "A-123456")
 print(studentUser1)
 secretariat1 = Sercretariat("Iwona", "Sekretariat1", "6")
