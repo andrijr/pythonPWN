@@ -123,3 +123,5 @@ print(a_dict2,  "a_dict2")
 a_set = set(a_list)
 a_list = list(a_set)
 a_tuple = tuple(a_list)
+
+print(" %2i %5.2f %d %e %s %c" % (11, 1, 1.01, 100, 'A', 'A'))

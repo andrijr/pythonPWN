@@ -61,4 +61,5 @@ class DatabaseConnection():
         except:
             print("Błąd wprowadzenia danych")
 
+
 DatabaseConnection()

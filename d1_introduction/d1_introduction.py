@@ -34,6 +34,7 @@ zmienna_3 = 23.3
 zmienna_4 = 'Test'
 zmienna_5 = '?'
 print(zmienna_1, zmienna_2, zmienna_3, zmienna_4, zmienna_5)
+print(zmienna_1 + zmienna_1)
 
 
 
@@ -147,7 +148,7 @@ y += 18
 print(x, y, z)
 
 # P3b
-x = x+100
+x = x-100
 print(x, y, z)
 
 # P3d
@@ -325,6 +326,7 @@ print(a)
 print ("text\\ntext\\ntext")
 print (r"text\ntext\ntext")
 print ("text\ntext\ntext")
+print ("text\ntext\ttext\\text\'text\" " + " ")
 
 print('none\n' *5)
 print('none\t' *5)
@@ -377,7 +379,7 @@ for i in miesiac:
 
 # Operatory
 print("# Operatory")
-
+# P 24
 bok_kw = 2
 bok_tr_1 = 3
 bok_tr_2 = 4
@@ -755,7 +757,11 @@ b = frozenset(a)
 #b.add(1)
 
 
+print(" %2i %+2i %-2i %04o %04x %5.2f %d %e %s %c" % (11, 11, 11, 11, 11, 1, 1.01, 100, 'A', 'A'))
 
+krotka = ()
+krotka += ('kolejny','ostatni',)
+print(krotka)
 
 
 

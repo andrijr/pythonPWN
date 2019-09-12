@@ -1,62 +1,83 @@
 import pymysql
-
-class DatabaseConnector:
+class DatabaseConnection():
     def __init__(self):
-        self.loginToDbServer("localhost","python_user","123","python_db")
-        while(True):
-            menu = input("(S)-select, (I)-insert, (D)-delete, (U)-update, (Q)-quit")
-            if(menu.upper() == "S"):
-                self.selectFromUsers()
-            elif(menu.upper() == "I"):
-                self.inserIntoUsers(input("imie: "),input("nazwisko: "),input("data urodzenia: "),
-                                    input("pensja: "), input("płeć: "))
-                decision = input("Potwierdź (T/N): ")
-                if(decision.upper() == "T"):
-                    # przeniesienie danych z bufora pamięci do DB
-                    self.connect.commit()
-                else:
-                    # wycofanie wprowadzanych danych
-                    self.connect.rollback()
-            elif(menu.upper() == "D"):
-                self.deleteUserById(input("id: "))
-            elif(menu.upper() == "U"):
-                pass
-            elif(menu.upper() == "Q"):
+        self.loginDatabase("localhost", "python_user", "python123", "python_db")
+        # while (True):
+        #     menu = input("S - select, I - insert, U - update, D - delete, Q - wyjscie: ")
+        #     if (menu.upper() == 'S'):
+        #         self.selectFromUser()
+        #     elif (menu.upper() == 'I'):
+        #         self.insertIntoUser(input("Imię "), input("Nazwisko "), input("Data urodzenia "),input("Wynagrodzenie "), input("Pleć "))
+        #     elif (menu.upper() == 'U'):
+        #         self.updateSalaryToUser(input("Podaj ID "), input("Procen podwyżki "))
+        #     elif (menu.upper() == 'D'):
+        #         self.deleteFromUser(input("Podaj ID Urzytkownika którego chcesz usunąć: "))
+        #     elif (menu.upper() == 'Q'):
+        #         self.connect.close()
+        #         break
+        #     else:
+        #         print("Błędny wybór")
+    def loginDatabase(self, host, user_login, user_password, db_name):
+        try:
+            self.connect = pymysql.connect(host, user_login, user_password, db_name)
+            self.cursor = self.connect.cursor()
+            print("Połączono z bazą danych")
+        except:
+            print("Błąd połączenia z bazą danych")
+    def selectFromUser(self):
+        self.cursor.execute("SELECT * FROM users")
+        print(" | %3s | %12s | %13s | %13s | %8s | %5s |" % ("ID", "Name", "Lastname", "Birthdate", "Salary", "Gender"))
+        for row in self.cursor.fetchall():
+            print(" | %3d | %12s |  %12s |  %12s |  %5.2f |  %5s |  " % (row[0], row[1],row[2],row[3],row[4],row[5]))
+    def insertIntoUser(self, name, lastname, birthdate, salary, gender):
+        try:
+            self.cursor.execute("INSERT INTO users VALUES (default, %s, %s, %s, %s, %s)", (name, lastname, birthdate, salary, gender))
+            decision = input("Czy zatwierdzić T/N: ")
+            if (decision.upper() == "T"):
+                self.connect.commit()
+            else:
+                self.connect.rollback()
+        except:
+            print("Błąd wprowadzenia danych")
+
+    def updateSalaryToUser(self, id, percent):
+        try:
+            self.cursor.execute("UPDATE users SET salary = salary * (1 + (%s/100)) where id = %s", (percent, id))
+            decision = input("Czy zatwierdzić T/N: ")
+            if (decision.upper() == "T"):
+                self.connect.commit()
+            else:
+                self.connect.rollback()
+        except:
+            print("Błąd wprowadzenia danych")
+    def deleteFromUser(self, id):
+        try:
+            self.cursor.execute("DELETE FROM users  where id = %s", (id))
+            decision = input("Czy zatwierdzić T/N: ")
+            if (decision.upper() == "T"):
+                self.connect.commit()
+            else:
+                self.connect.rollback()
+        except:
+            print("Błąd wprowadzenia danych")
+
+# DatabaseConnection()
+
+databaseConnection = DatabaseConnection()
+while(DatabaseConnection()):
+        while (True):
+            menu = input("S - select, I - insert, U - update, D - delete, Q - wyjscie: ")
+            if (menu.upper() == 'S'):
+                databaseConnection.selectFromUser()
+            elif (menu.upper() == 'I'):
+                databaseConnection.insertIntoUser(input("Imię "), input("Nazwisko "), input("Data urodzenia "), input("Wynagrodzenie "),
+                                    input("Pleć "))
+            elif (menu.upper() == 'U'):
+                databaseConnection.updateSalaryToUser(input("Podaj ID "), input("Procen podwyżki "))
+            elif (menu.upper() == 'D'):
+                databaseConnection.deleteFromUser(input("Podaj ID Urzytkownika którego chcesz usunąć: "))
+            elif (menu.upper() == 'Q'):
+                databaseConnection.connect.close()
                 break
             else:
                 print("Błędny wybór")
-    def loginToDbServer(self, host, user_login, user_password, db_name):
-        try:
-            # globalny obiekt połącznia z db
-            self.connect = pymysql.connect(host,user_login,user_password,db_name)
-            self.coursor = self.connect.cursor()
-            print("Ustanowiono połączenie z bazą danych")
-        except:
-            print("Błąd połączenia z bazą danych")
-    def selectFromUsers(self):
-        # zapytanie SQL
-        sql_query = "SELECT * FROM users"
-        # metoda wykonująca zapytanie
-        self.coursor.execute(sql_query)
-        # zwrócenie tabelki wynikowej
-        print("| %3s | %15s | %15s | %15s | %19s | %4s |"
-              % ("ID", "IMIĘ", "NAZWISKO", "DATA URODZENIA", "WYNAGRODZENIE NETTO", "PŁEC"))
-        for user in self.coursor.fetchall():
-            print("| %3d | %15s | %15s | %15s | %17.2fzł | %4s |"
-                  % (user[0], user[1], user[2], user[3], user[4], user[5]))
-    def inserIntoUsers(self, name, lastname, birthdate, salary, gender):
-        try:
-            self.coursor.execute("INSERT INTO users VALUES (default, %s, %s, %s, %s, %s)",
-                             (name, lastname, birthdate, salary, gender))
-            # self.coursor.execute("INSERT INTO users VALUES (default, "+name+", "+lastname+", "+birthdate+", "+str(salary)+", "+gender+")")
-        except:
-            print("błąd danych!")
-    def deleteUserById(self, id):
-        try:
-            sql = "DELETE FROM users WHERE id = %s"
-            self.coursor.execute(sql, id)
-        except:
-            print("błąd danych!")
-
-
-DatabaseConnector()
