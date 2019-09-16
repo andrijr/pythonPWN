@@ -1,4 +1,4 @@
-# P45
+ # P45
 
 # Używając serii instrukcji if, sprawdź, czy wartości od 0 do 4 są równe True lub False.
 # Wykonaj 5 osobnych testów i wypisz tylko te wartości dla których konwersja daje wynik True.

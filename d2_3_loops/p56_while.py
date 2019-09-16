@@ -14,9 +14,12 @@ listGrade = []
 newList = []
 liczba = ' '
 while len(liczba) != 0:
-    liczba = input("Podaj liczbę ")
-    if len(liczba) != 0:
-        listGrade.append(int(liczba))
+    try:
+        liczba = input("Podaj liczbę , zakącz wciśnij samo ENTER ")
+        if len(liczba) != 0:
+            listGrade.append(int(liczba))
+    except:
+        print("")
 else:
     # print(listGrade)
     for x in listGrade:
@@ -26,5 +29,8 @@ else:
         else:
             print(x, "Nie jest na liście ocen")
 print("Lista wprowadzonych ocen", newList)
-print("średnia ocena", round(sum(newList) / len(newList), 2))
+try:
+    print("średnia ocena", round(sum(newList) / len(newList), 2) )
+except:
+    print("")
 

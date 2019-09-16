@@ -125,3 +125,45 @@ a_list = list(a_set)
 a_tuple = tuple(a_list)
 
 print(" %2i %5.2f %d %e %s %c" % (11, 1, 1.01, 100, 'A', 'A'))
+
+
+#################################
+tekst = "tekst1 tekst2"
+lista = list(tekst)
+print(lista)
+lista = tekst.split()
+print(lista)
+lista = sorted(lista, reverse = True)
+print(lista)
+lista.sort()
+print(lista)
+tekst.count('t')
+print(tekst.count(""))
+
+
+zbior = set([1,2,3])
+tekst = str(zbior) + "}" +'3'
+print(tekst)
+zbior = set(tekst)
+print(zbior)
+sorted(zbior)
+print(sorted(zbior, reverse = False))
+print()
+
+slownik = {1 : 'wartość1', 2 : 'wartośćN'}
+print(slownik[1])
+slownik[1] = 'wartość2'
+print(slownik[1])
+slownik2 = slownik.copy()
+print(slownik)
+print(slownik2)
+print()
+slownik[3] = "wartość3"
+slownik[2] = "wartość2"
+print(slownik)
+print(slownik2)
+print()
+slownik2.update(slownik)
+print(slownik2)
+slownik2.update(slownik)
+print(slownik2)

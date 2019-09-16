@@ -1,6 +1,7 @@
 # P48
 
-# Napisz program, który wczyta od użytkownika liczbę całkowitą i bez użycia instrukcji if wyświetli informację, czy jest to liczba parzysta, czy nieparzysta.
+# Napisz program, który wczyta od użytkownika liczbę całkowitą
+# i bez użycia instrukcji if wyświetli informację, czy jest to liczba parzysta, czy nieparzysta.
 
 
 
