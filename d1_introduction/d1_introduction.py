@@ -18,6 +18,7 @@ print(a)
 print(PI)
 
 # PO
+# Które zmienne sąpoprawnie zadeklarowane
 imie   = "Anna"
 adres_zamieszkania = "Nieznana-20"
 drugie_imię = "Beata"
@@ -28,6 +29,9 @@ And = "hello"
 wart2 = "2"
 
 # POa
+# Utwórz 5 zmiennych, które będąprzechowywać odpowiednio wskazane wartości. A następnie wypisz te zmienne.
+# 45 Szkolenia 23.5Test?
+# Do wypisania zmiennych wykorzystaj funkcjęprint().
 zmienna_1 = 45
 zmienna_2 = 'Szkolenia'
 zmienna_3 = 23.3
@@ -39,6 +43,9 @@ print(zmienna_1 + zmienna_1)
 
 
 # P0b
+# Utwórz 5 zmiennych, które będązawierały w sobie cyfrę, polskąliterę, podkreślenie, dużąliteręoraz będąprzechowywać poniższe dane.
+# Następnie w dalszej części kodu zmodyfikuj zawartość 2, 3 i 5 zmiennej na poniższe. A następnie wypisz dane.
+# •Cel •Sukces•Zwycięstwo•Chwała•Debiut•58•147•258
 Cel = 'Cel'
 sukces = 'sukces'
 zwycięstwo = 'zwycięstwo'
@@ -69,6 +76,10 @@ a,b = b,a
 print(a,b)
 
 # P0c
+# Utwórz 5 zmiennych (zmienna_1, zmienna_2…), które będąprzechowywać poniższe wartości.
+# Ciekawe Programowanie Jest Wciągające I
+# W dalszej części kodu przypisz zmienne do zmiennych tak by odczytując kolejne wartości zmiennych otrzymać tekst
+# „Programowanie Jest Ciekawe I Wciągające”. Być może potrzebna Ci będzie dodatkowa zmienna pomocnicza.
 zmienna_1 = "Ciekawe"
 zmienna_2 = "Programowanie"
 zmienna_3 = "Jest"
@@ -89,7 +100,11 @@ zmienna_5 = tmp       # wciagajace
 
 print (zmienna_1, zmienna_2, zmienna_3, zmienna_4, zmienna_5)
 
-###
+# P0d
+# Utwórz 5 dowolnych zmiennych które będąprzechowywać poniższe wartości.
+# Merkury WenusZiemiaMarsJowisz
+# Wypisz zmienne zgodnie z kolejnościąw jednym princie.
+# Usuńostatniązmiennąi spróbuj wypisać ponownie zmienne.
 zmienna_1 = "Ciekawe"
 zmienna_2 = "Programowanie"
 zmienna_3 = "Jest"
@@ -124,44 +139,65 @@ print (2-1)
 print ("2-1")
 
 # P1
+# Napisz program w którym utworzysz trzy zmienne a, b, c, którym przypiszesz następujące wartości 1, 2.4 , w1.
+# Wyświetl te wartości.
 a = 1
 b = 2.4
 c = 'w1'
 print(a, b, c)
 
 # P2
+# Zmodyfikuj wartości zmiennych a, b, c tak aby przyjmowały nowe wartości 2.1, abc, 0.
+# Wyświetl te wartości.
 a = 2.1
 b = 'abc'
 c = 0
 print(a,b,c)
 
 # P3
+# Przypisz do zmiennej b wartość zmiennej c, a do zmiennej a wartość 13.
+# Wyświetl te wartości.
 b = c
 a = 13
 print(a, b, c)
 
+# P3a
+# Utwórz kolejne zmienne x, y, z zwartością10, 50 100.
+# Wyświetl te wartości.
 x, y, z = 10, 50 , 100
 print(x, y, z)
 
-# P3a
+# P3b
+# Zwiększ wartość zmiennej y o 18.
+# Wyświetl te wartości.
 y += 18
 print(x, y, z)
 
-# P3b
+# P3c
+# Zmniejsz wartość zmiennej x o 100.
+# Wyświetl te wartości.
 x = x-100
 print(x, y, z)
 
 # P3d
+# Zwiększ wartość zmiennej z o 5 razy.
+# Wyświetl te wartości.
 z *=5
 print(x,y, z)
 
 # P4
+# Usuńzmiennąa i c.
+# Spróbuj do zmiennej c dodać wartość 31.3.
 #del(a,c)
 print(b)
 print(a,c)
 c += 31.1
 
 # P5
+# Napisz program przechowujący dane pracownika w osobnych zmiennych:
+# Imie NazwiskoRok urodzeniaStanowiskoPłaca
+# Wyświetl zawartość tych zmiennych.
+# Kod programu pozostaw do kolejnych ćwiczeńP8
 imie          = "James"
 nazwisko      = "Spring"
 rok_urodzenia = "21.04.1987"
@@ -176,6 +212,7 @@ print (stanowisko)
 print (placa)
 
 # P6
+# Napisz program, który oblicza pole powierzchni koła dla dowolnych wartości promienia koła. Wykorzystaj do tego ćwiczenia stałąprzechowującąwartość pi.
 PI = 3.14
 # r = int(input("podaj promień koła: "))
 r = 100
@@ -185,11 +222,14 @@ print(obwod)
 print(pole)
 
 # P6b
+# Napisz program, który obliczy obwód prostokąta o bokach 15 i 80.
 a = 15
 b = 80
 print( 2*a + 2*b)
 
 # P7b
+# Zaprojektuj odpowiedni algorytm i oblicz poniższąwartość z wykorzystaniem zmiennych:
+# Samochód na 100 km spala 8 l paliwa. Ile spali paliwa po przejechaniu 382 km ?
 print("P7b")
 spala = 8
 km = 382
@@ -197,6 +237,8 @@ print(km / 100 * spala)
 print(spala / 100 * km)
 
 # P7c
+# Znajdźklucz dla zmiennej a=2, zaprojektuj algorytm i podaj wartości dla x, y, z
+# 2 6 14 30 62 x y z
 a = 2
 b = (2 * a) + 2
 c = (2 * b) + 2
@@ -208,6 +250,8 @@ z = (2 * y) + 2
 print(a, b, c, d, e, x, y, z)
 
 # P7d
+# Posiadamy dwie drukarki, czarno-biała i kolorowa. Wiemy, że kolorowa drukuje 2 kartki na 5min, natomiast czarno-biała 8 kartek na 2min.
+# Mamy 45min czasu na wydruki. Ile wydrukujemy w sumie kartek w kolorze i czarni-bieli. Zaprojektuj algorytm, który szybko nam zwróci wynik.
 kol_il = 2
 kol_cz = 5
 cza_il = 8
@@ -234,10 +278,12 @@ print(round(1.6))
 print(int(1.6))
 
 # P8
+# Sprawdźtypy zmiennych utworzonych w zadaniu z danymi pracownika.
 print(type(wiek))
 print(type(imie))
 
 # P9
+# Sprawdźczy modyfikacja zmiennej na zmiennąinnego typu spowoduje zmianęrezultatu działania funkcji type().
 wiek = str(wiek)
 print("wiek ", type(wiek))
 print(wiek)
@@ -245,6 +291,8 @@ print(wiek)
 print("imie ", imie)
 
 # P10
+# Napisz program przeliczający zadanąkwotębrutto np.: 1000 zł na kwotęnetto.
+# Zastosuj kilka zmiennych do obliczania stawek VAT (3%, 7%, 23%) oraz wynik działania programu zaokrąglij do dwóch miejsc po przecinku.
 brutto = 1000
 vat_1 = 3
 vat_2 = 7
@@ -254,6 +302,11 @@ print("netto vat_2 ", round(brutto / (1 + vat_2/100), 2))
 print("netto vat_3 ", round(brutto / (1 + vat_3/100), 2))
 
 # P11
+# Napisz program, który wykonuje sumęcen produktów dla konkretnego zamówienia:
+# Chleb (1,99 zł / 1 szt.)
+# Mleko (2,50 zł / 1l.)
+# Cukierki (12,99 / 1kg.)
+# Zamówienie: 2szt. chleba + 0,5l. mleka + 300g cukierków
 chleb    = 1.99
 mleko    = 2.50
 cukierki = 12.99
@@ -311,12 +364,15 @@ print(type(d))
 
 
 # P16
+# Wykonaj konwersjęliczby 7 do wartości logicznej.
+# Rozumiesz dlaczego otrzymałeśtaki wynik?
 a = 7
 a = bool(a)
 print(type(a))
 print((a))
 
 # P18
+# Napisz program, który wypisze na ekran trzykrotnąwartość dowolnej zmiennej tekstowej.
 a = 'tekst'
 a  = 3 * a
 print(a)
@@ -343,6 +399,9 @@ print ((h * p)/2)
 print('Junaid' + '\n' + 'Effendi')
 
 # P22
+# Zapisz dane o pracownikach takie jak: imię, nazwisko, wiek, pensja, stanowisko w osobnych zmiennych.
+# Następnie tak sformatuj wyjście z programu aby poprawnie wypisywał informacje o pracowniku, np.: Pan Adam Kowalski (wiek: 35 lat) pracuje na stanowisku: młodszy inżynier procesu (pensja: 6000 brutto).
+# Wyświetl powyższy napis 10-cio krotnie.
 imie = 'Andrij'
 nazwisko = 'Roman'
 wiek = 33
@@ -351,6 +410,9 @@ stanowisko = 'młodszy inżynier procesu'
 print(imie, nazwisko, '(wiek:', wiek, 'lat) pracuję na stanowisku', stanowisko, '(pensja:', pensja, 'brutto).')
 
 # P 22a
+# Firma X w styczniu miała dochód 700 zł, jej koszty to 500 zł czyli czysty zysk to 200 zł, przy założeniu,
+# że koszty sąstałe w każdym miesiącu oraz firma ma dochód 50% większy w porównaniu do poprzedniego miesiąca. Zaprojektuj algorytm,
+# który policzy zysk firmy do 6 miesiąca w rozbiciu na każdy miesiąc.Zadbaj o precyzjęwyniku do 2 miejsc po przecinku.
 dochod = 700
 koszt = 500
 przyrost =1.5
@@ -380,6 +442,10 @@ for i in miesiac:
 # Operatory
 print("# Operatory")
 # P 24
+# Wykorzystując interpreter Pythonaoblicz:
+# Pole kwadratu o boku 2 [cm]
+# Obwód trójkąta o bokach 3, 4, 6 [cm]
+# Pole koła o promieniu 3 [cm]
 bok_kw = 2
 bok_tr_1 = 3
 bok_tr_2 = 4
@@ -391,6 +457,7 @@ print("pole kołą ", 3.14 * r ** 2)
 
 
 # P25
+# Oblicz jaka jest stawka godzinowa netto, a jaka brutto pracownika, który otrzymał wynagrodzenie 5500zł netto za 168h pracy.
 wynagr_net = 5500
 czas = 168
 print("stawka godzinowa netto:", round(wynagr_net / czas ,2))
@@ -409,6 +476,10 @@ print("Jeśli jakaś wartość jest fałszywa  or zwraca pierwszą prawdziwą wa
 print("Jeśli wszystkie wartości sąfałszem, OR zwraca ostatniąwartość.","" or  '' or {} or 0 or ())
 
 # P27
+# Oblicz wynik poniższej funkcji reprezentowanej przez bramki logiczne: dla wejść
+# a = 0
+# b = 0
+# c = 1
 # bramki logiczne
 print ("# Bramki logiczne")
 a = bool(0)
@@ -428,14 +499,19 @@ print('Hello \n'*3)
 print('Hello \t'*3)
 
 # P35
+# Napisz program, który prosi użytkownika o podanie imienia i następnie wypisuje na ekran powitanie po imieniu użytkownika,
+# np. Michał, witaj w kursie Python
 #imie = input("Podaj swoję imię: ")
 #print(imie, ", witaj w kursię Python")
 
 # P36
+# Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 30 kopii tego napisu, każda w osobnej linii.
 #napis = input('Podaj napis: ')
 #print(30 * (napis + '\n'))
 
 # P37
+# Napisz program, który obliczy pole trójkąta, pod warunkiem że użytkownik poda wysokość i długość podstawy tego trójkąta.
+# Uwzględnij, że wysokość i długość podstawy mogąbyć liczbami niecałkowitymi.
 """ 
 h = float(input('podaj wysokość trójkąta h: '))
 a = float(input('podaj podstawe trójkąta a: '))

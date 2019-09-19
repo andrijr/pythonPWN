@@ -9,14 +9,21 @@
 # Data pomiaru
 # Wynik pomiaru -> przykładowy: User;Data,Result
 
-class Uses():
+user_id_no_last = 0
+class User():
     def __init__(self, login, name, lastname):
         self.login = login
         self.name = name
         self.lastname = lastname
+        global user_id_no_last
+        user_id_no_last += 1
+        self.user_id_no = user_id_no_last
+        self.data = []
+        self.measurement = []
+
     def __str__(self):
-        return "| %15s | %15s | %15s" % (self.login, self.name, self.lastname)
+        return "| %03d | %15s | %15s | %15s | %25s | %25s |"  % (self.user_id_no, self.login, self.name, self.lastname, self.data, self.measurement)
 
 
-user1 = Uses("A1", "A1", "A1")
-print(user1)
+# user1 = User("A1", "A1", "A1")
+# print(user1)

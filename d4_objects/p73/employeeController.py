@@ -39,7 +39,9 @@ class EmployeeController:
     def changeContractAndSalaryEmployee(self, employee_no, contract, salary):
         findEmployee = self.findEmployeeByNumber(employee_no)
         if findEmployee != None:
-            findEmployee.changeContractAndSalaryEmployee(contract, salary)
+            # findEmployee.changeContractAndSalaryEmployee(contract, salary)
+            findEmployee.contract = contract
+            findEmployee.salary = salary
             print("Zmieniono dane pracownika " + findEmployee.__str__())
         else:
             print("Nie ma takiego pracownika " )

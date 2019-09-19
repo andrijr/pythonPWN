@@ -1,29 +1,16 @@
 import pymysql
 class DatabaseConnection():
     def __init__(self):
-        self.loginDatabase("localhost", "python_user", "python123", "python_db")
-        while (True):
-            menu = input("S - select, I - insert, U - update, D - delete, Q - wyjscie: ")
-            if (menu.upper() == 'S'):
-                self.selectFromUser()
-            elif (menu.upper() == 'I'):
-                self.insertIntoUser(input("Imię "), input("Nazwisko "), input("Data urodzenia "),input("Wynagrodzenie "), input("Pleć "))
-            elif (menu.upper() == 'U'):
-                self.updateSalaryToUser(input("Podaj ID "), input("Procen podwyżki "))
-            elif (menu.upper() == 'D'):
-                self.deleteFromUser(input("Podaj ID Urzytkownika którego chcesz usunąć: "))
-            elif (menu.upper() == 'Q'):
-                self.connect.close()
-                break
-            else:
-                print("Błędny wybór")
+        self.loginDatabase("localhost", "python_user", "user", "python_db")
     def loginDatabase(self, host, user_login, user_password, db_name):
         try:
             self.connect = pymysql.connect(host, user_login, user_password, db_name)
             self.cursor = self.connect.cursor()
-            print("Połączono z bazą danych")
+            # print("Połączono z bazą danych")
+            self.loginOk = True
         except:
-            print("Błąd połączenia z bazą danych")
+            self.loginOk = False
+            # print("Błąd połączenia z bazą danych")
     def selectFromUser(self):
         self.cursor.execute("SELECT * FROM users")
         print(" | %3s | %12s | %13s | %13s | %8s | %5s |" % ("ID", "Name", "Lastname", "Birthdate", "Salary", "Gender"))
@@ -62,4 +49,31 @@ class DatabaseConnection():
             print("Błąd wprowadzenia danych")
 
 
-DatabaseConnection()
+
+databaseConnection = DatabaseConnection()
+# print(databaseConnection.loginOk)
+while(databaseConnection.loginOk):
+    print("Połączono z bazą danych")
+    try:
+        menu = input("S - select, I - insert, U - update, D - delete, Q - wyjscie: ")
+        if (menu.upper() == 'S'):
+            databaseConnection.selectFromUser()
+        elif (menu.upper() == 'I'):
+            databaseConnection.insertIntoUser(input("Imię "), input("Nazwisko "), input("Data urodzenia "), input("Wynagrodzenie "),
+                                input("Pleć "))
+        elif (menu.upper() == 'U'):
+            databaseConnection.updateSalaryToUser(input("Podaj ID "), input("Procen podwyżki "))
+        elif (menu.upper() == 'D'):
+            databaseConnection.deleteFromUser(input("Podaj ID Urzytkownika którego chcesz usunąć: "))
+        elif (menu.upper() == 'Q'):
+            databaseConnection.connect.close()
+            print("Rozłączono z bazą danych")
+            break
+
+        else:
+            print("Błędny wybór")
+    except:
+        print("Błąd")
+else:
+    print("Błąd połączenia z bazą danych.")
+

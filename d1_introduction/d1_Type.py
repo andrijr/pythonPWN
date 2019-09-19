@@ -3,6 +3,7 @@ b = [1,2,3,1,1,2] # lista
 c = (1,2,1,2,1) # krotka
 d = {1,2,3,4,5} # zbiór
 e = {'a':1,'b':2,'c':3} # Słownik
+print()
 
 ############ Napisy
 print("# napisy = Tekst")

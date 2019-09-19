@@ -15,7 +15,7 @@ newList = []
 liczba = ' '
 while len(liczba) != 0:
     try:
-        liczba = input("Podaj liczbę , zakącz wciśnij samo ENTER ")
+        liczba = input("Podaj kolejną liczbę , zakącz wciśnij samo ENTER ")
         if len(liczba) != 0:
             listGrade.append(int(liczba))
     except:

@@ -7,8 +7,18 @@ def changeColour(n, colour1 = "black",colour2="white"):
             print(colour1)
         else:
             print(colour2)
-
 changeColour(5)
+print()
+def changeColour2(n, colour1 = "black",colour2="white"):
+    isColour = "black"
+    for i in range(0,n+1):
+        if isColour == "white":
+            print(colour2)
+            isColour = "black"
+        else:
+            isColour = "white"
+            print(colour1)
+changeColour2(5)
 print()
 #########################
 

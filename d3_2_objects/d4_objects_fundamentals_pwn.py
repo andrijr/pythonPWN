@@ -20,8 +20,8 @@ class Point3D:
         if(self.x == other.x and self.y == other.y and self.z == other.z):
             return True
         return False
-    # def __str__(self):
-    #     return "[x=%d,y=%d,z=%d]" % (self.x,self.y,self.z)
+    def __str__(self):
+        return "[x=%d,y=%d,z=%d]" % (self.x,self.y,self.z)
 
 # obsługa żądań - kontroler
 class Point3DController:

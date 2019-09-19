@@ -1,6 +1,6 @@
 # Sprawdzanie typów wartości
 print(type("abc"),type("a"),type('a'))
-
+#
 # Struktury danych
 global_temp = []
 # Dodawanie wartości

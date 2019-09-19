@@ -1,4 +1,11 @@
 
+"""
+1. Szukanie min i max [1,23] |
+2. a = |0-1|/|1-23| = a = |0 - 1| / |min - max|
+3. b = 1 - 1/22 * 23 = b = 1 - (a * max)
+4. y = a*x + b -> 1/22*x - 1/22 | min - max
+"""
+
 def findMinimum(data):
     return min(data)
 
