@@ -22,3 +22,4 @@ class Lotto:
 lotto1 = Lotto()
 lotto1.starting()
 lotto1.sorting()
+print(lotto1)

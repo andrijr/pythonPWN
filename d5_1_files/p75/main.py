@@ -3,19 +3,26 @@ from d5_1_files.p75.generateController import  generateController
 pomiary = generateController()
 while(True):
     print(pomiary)
-    main = input("D - dodaj urzytkownika\nU - usuń urzytkownika\nM - wykonaj pomiar\nMM - wykonaj pomiar z nowmymi parametrami\nL - likwidój pomiar\nS - zapisz pomiary\n"
-                 "A - dopisz pomiary do pliku\nW - wyświetl plik pomiarów\nQ - wyjdz z programu ")
+    main = input("D - dodaj urzytkownika,  U - usuń urzytkownika,  M - wykonaj pomiar,  MM - wykonaj pomiar z nowmymi parametrami\n"
+                 "L - likwidój pomiar,  S - zapisz pomiary do pliku,  "
+                 "A - dopisz pomiary do pliku,  W - wyświetl plik pomiarów,  Q - wyjdz z programu ")
     if main.upper() == 'D':
         login = input("Podaj login ")
         name = input("Podaj imie ")
         lastname = input("Podaj nazwisko ")
         pomiary.addUser(login, name, lastname)
     elif main.upper() == 'U':
-        user_id_no = int(input("Podaj id urzytkownika "))
-        pomiary.deletedUserById(user_id_no)
+        try:
+            user_id_no = int(input("Podaj id urzytkownika "))
+            pomiary.deletedUserById(user_id_no)
+        except:
+            print("Błędny wybór")
     elif main.upper() == 'M':
-        user_id_no = int(input("Wykonaj pomiar dla id urzytkownika "))
-        pomiary.addTakeMeasurementById(user_id_no)
+        try:
+            user_id_no = int(input("Wykonaj pomiar dla id urzytkownika "))
+            pomiary.addTakeMeasurementById(user_id_no)
+        except:
+            print("Błędny wybór")
     elif main.upper() == 'MM':
         try:
             user_id_no, from_no, to_no, n = [int(x) for x in input("Wykonaj pomiar dla id urzytkownika oraz podaj ewentualne parametry po przecinku id, from_no, to_no, n ").split(",")]
@@ -23,8 +30,11 @@ while(True):
         except:
             print("Błedne liczby ")
     elif main.upper() == 'L':
-        user_id_no = int(input("Likwidój pomiar dla id urzytkownika "))
-        pomiary.deleteTakeMeasurementById(user_id_no)
+        try:
+            user_id_no = int(input("Likwidój pomiar dla id urzytkownika "))
+            pomiary.deleteTakeMeasurementById(user_id_no)
+        except:
+            print("Błędny wybór")
     elif main.upper() == 'S':
         name_file = str(input("Podaj nazwę pliku "))
         pomiary.writeTakeMeasurement(name_file)

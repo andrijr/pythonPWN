@@ -30,9 +30,9 @@ class Employee:
         self.employee_no = employee_last_no
     def __str__(self):
         return "%04d %15s | %15s | %12s | %10s zł" % (self.employee_no, self.name, self.lastname, self.contract, self.salary)
-    def changeContractAndSalaryEmployee(self, new_contract, new_salary):
-        self.contract = new_contract
-        self.salary = new_salary
+    # def changeContractAndSalaryEmployee(self, new_contract, new_salary):
+    #     self.contract = new_contract
+    #     self.salary = new_salary
 
 
 

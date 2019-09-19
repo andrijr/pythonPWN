@@ -61,7 +61,7 @@ class generateController():
         url = getcwd()
         chdir(url)
         self.name_file = str(name_file) + ".txt"
-        file = open(name_file, "w+", encoding="UTF-8")
+        file = open(self.name_file, "w+", encoding="UTF-8")
         for user in self.users:
             file.write(str(user.user_id_no) + ';' + user.login + ';' + user.name + ';' + user.lastname + ';' + str(user.data) + ';' + str(user.measurement) + "\n")
         file.close()
