@@ -12,7 +12,6 @@ class User:
         return 'Login: %10s | Active: %6s | Permission %s %s %s %s' % \
                (self.user_login, self.active, "SELECT" if self.permissionSelect else "", "INSERT" if self.permissionInsert else "",
                 "UPDATE" if self.permissionUpdate else "", "DELETE" if self.permissionDelete else "")
-
 class Moderator(User):
     def __init__(self, user_login, user_password):
         super().__init__(user_login, user_password)
@@ -21,7 +20,6 @@ class Moderator(User):
         self.permissionDelete = False
     def __str__(self):
         return super().__str__()
-
 class Admin(Moderator):
     def __init__(self, user_login, user_password):
         super().__init__(user_login, user_password)
@@ -29,9 +27,12 @@ class Admin(Moderator):
     def __str__(self):
         return super().__str__()
 
-user = User("user", "user")
-print(user)
-moderator = Moderator("moderator", "moderator")
-print(moderator)
-admin = Admin("admin", "admin")
-print(admin)
+# user = User("user", "user")
+# print(user)
+# moderator = Moderator("moderator", "moderator")
+# print(moderator)
+# admin = Admin("admin", "admin")
+# print(admin)
+# user.active = False
+# print(user)
+# print(moderator)

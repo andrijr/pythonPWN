@@ -11,9 +11,14 @@ from datetime import datetime
 from time import strftime
 
 import pymysql
+
+from d5_2_database.p77.main_user import databaseConnectionUser
+
+
 class DatabaseConnection():
     def __init__(self):
-        self.loginDatabase("localhost", "python_user", "user", "python_p77")
+        # self.loginDatabase("localhost", "python_admin", "admin", "python_p77")
+        self.loginDatabase("localhost", databaseConnectionUser.admin.user_login, databaseConnectionUser.admin.user_password, "python_p77")
     def loginDatabase(self, host, user_login, user_password, name_db):
         try:
             self.connect = pymysql.connect(host, user_login, user_password, name_db)
