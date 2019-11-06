@@ -6,8 +6,10 @@ users = [
         ["user", "user", "role_user", True, 0],
         ["guest", "guest", "role_guest", True, 0],
         ]
+
 isLogged = False
 while (isLogged == False):
+    print(users)
     login = input("Podaj login: ")
     password = input("Podaj hasło: ")
     for user in users:

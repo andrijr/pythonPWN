@@ -3,7 +3,7 @@ import pymysql
 
 class DatabaseConnector:
     def __init__(self):
-        self.loginToDbServer("localhost","python_user","user","python_db")
+        self.loginToDbServer("localhost","python_admin","admin","python_db")
         while(True):
             menu = input("(S)-select, (I)-insert, (D)-delete, (U)-update, (Q)-quit  :  ")
             if(menu.upper() == "S"):

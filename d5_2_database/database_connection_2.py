@@ -1,7 +1,7 @@
 import pymysql
 class DatabaseConnection():
     def __init__(self):
-        self.loginDatabase("localhost", "python_user", "user", "python_db")
+        self.loginDatabase("localhost", "python_admin", "admin", "python_db")
     def loginDatabase(self, host, user_login, user_password, db_name):
         try:
             self.connect = pymysql.connect(host, user_login, user_password, db_name)
@@ -49,3 +49,5 @@ class DatabaseConnection():
             print("Błąd wprowadzenia danych")
 
 
+databaseConnection = DatabaseConnection()
+print(databaseConnection.loginOk)

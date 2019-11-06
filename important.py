@@ -10,3 +10,5 @@
 # # p75 zapis do pliku ja
 # # p76
 # database_connection_2
+# project_imdb
+# d7 logowanie

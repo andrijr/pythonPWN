@@ -1,0 +1,20 @@
+Comments, description
+
+What should contain:
+Problem description
+feature selection
+data cleaning
+analyze selected features
+description of what and how we are going to check
+overview of selected models
+build two models to predict the application result
+compare them (true positives, negatives.. , f1, precision, recall, confusion matrix)
+analyze them
+summary
+
+Steps:
+transform categorical data into numbers
+transform decision values to boll
+drop 'Anulowana' decision values
+select 4-8 relevant features
+do a lot sns pairplots

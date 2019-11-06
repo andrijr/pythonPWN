@@ -1,6 +1,6 @@
-from d5_1_files.p75.generateController import  generateController
+from d5_1_files.p75.GenerateController import  GenerateController
 
-pomiary = generateController()
+pomiary = GenerateController()
 while(True):
     print(pomiary)
     main = input("D - dodaj urzytkownika,  U - usuń urzytkownika,  M - wykonaj pomiar,  MM - wykonaj pomiar z nowmymi parametrami\n"
