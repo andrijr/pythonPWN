@@ -1,7 +1,7 @@
 asn1crypto==0.24.0
 beautifulsoup4==4.8.0
 cffi==1.12.3
-cryptography==2.7
+cryptography==3.2
 cycler==0.10.0
 joblib==0.14.0
 kiwisolver==1.1.0
